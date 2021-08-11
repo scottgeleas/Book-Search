@@ -9,23 +9,16 @@ const resolvers = {
                 const user = await User.findOne({
                     _id: context.user._id,
                 });
-                console.log(user);
                 return user;
-                // return User.find({
-                //     where: {
-                //         _id: context.user._id,
-                //     },
-                // });
             }
 
             throw new AuthenticationError('No user found');
         },
     },
+
     Mutation: {
         login: async (parent, { email, password }, context) => {
-            console.log(email);
             const user = await User.findOne({ email });
-            console.log(user);
             if (!user) {
                 throw new AuthenticationError('No user found with that email');
             }
@@ -71,7 +64,7 @@ const resolvers = {
             }
             throw new AuthenticationError('No user found');
         },
-        
+
         removeBook: async (parent, { bookId }, context) => {
             if (context.user) {
                 const user = User.findOneAndUpdate(
@@ -86,8 +79,7 @@ const resolvers = {
                     {
                         new: true,
                     }
-                    );
-                    console.log(user);
+                );
                 return user;
             }
             throw new AuthenticationError('No user found');
