@@ -30,7 +30,10 @@ If you want to edit this app you must have a Github account, have downloaded Nod
 
  ### Acknowledgments:
 
-University of New Hampshire Coding Bootcamp
+Favicon made by 
+[Smashicons](https://www.flaticon.com/authors/smashicons) 
+from 
+[Flaticon](https://www.flaticon.com/)
 
  ### License: 
  
