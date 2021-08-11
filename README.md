@@ -1,5 +1,7 @@
 # Book Search
+This is an application that lets users search and save books via the Google Books API. This app utilizes GraphQL to only return the data required. Users can search for any book, and save it to look up later.
 
+![]()
 
 ## Getting Started:
 
@@ -12,7 +14,7 @@ If you want to edit this app you must have a Github account, have downloaded Nod
 - Download MongoDB here: [MongoDB](https://www.mongodb.com/)
 - Download Robo 3T here: [Robo 3T](https://robomongo.org/)
 - Download Node: [Node.js](https://nodejs.org/en/)
-- Repository link: []()
+- Repository link: [Book Search Repo](https://github.com/scottgeleas/Book-Search)
 
  ### Authors:
 
@@ -20,6 +22,8 @@ If you want to edit this app you must have a Github account, have downloaded Nod
 
  ### Built With:
 
+- GraphQL
+- React.js
 - Javascript
 - Node.js
 - Express.js
@@ -39,7 +43,7 @@ from
  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Copyright (c) [2021] [Scott Geleas]]
+Copyright (c) [2021] [Scott Geleas]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
