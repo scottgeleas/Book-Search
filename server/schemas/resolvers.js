@@ -6,11 +6,16 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.find({
-                    where: {
-                        _id: context.user._id,
-                    },
+                const user = await User.findOne({
+                    _id: context.user._id,
                 });
+                console.log(user);
+                return user;
+                // return User.find({
+                //     where: {
+                //         _id: context.user._id,
+                //     },
+                // });
             }
 
             throw new AuthenticationError('No user found');
@@ -18,17 +23,14 @@ const resolvers = {
     },
     Mutation: {
         login: async (parent, { email, password }, context) => {
-            const user = await User.find({
-                where: {
-                    email,
-                },
-            });
-
+            console.log(email);
+            const user = await User.findOne({ email });
+            console.log(user);
             if (!user) {
                 throw new AuthenticationError('No user found with that email');
             }
 
-            const validPassword = user.isCorrectPassword(password);
+            const validPassword = await user.isCorrectPassword(password);
             if (!validPassword) {
                 throw new AuthenticationError('Incorrect password');
             }
@@ -40,44 +42,41 @@ const resolvers = {
 
         addUser: async (parent, { username, email, password }) => {
             const user = await User.create({ username, email, password });
-            token = signToken({
+            const token = signToken({
                 username,
                 email,
-                password,
+                _id: user._id,
             });
 
             return { token, user };
         },
 
-        saveBook: async (parent, { bookInput }, context) => {
+        saveBook: async (parent, args, context) => {
             if (context.user) {
-                const user = User.findOneAndUpdate(
+                const user = await User.findOneAndUpdate(
                     {
-                        where: {
-                            _id: context.user._id,
-                        },
+                        _id: context.user._id,
                     },
                     {
-                        $push: {
-                            savedBooks: bookInput,
+                        $addToSet: {
+                            savedBooks: args,
                         },
                     },
                     {
                         new: true,
                     }
                 );
+
                 return user;
             }
             throw new AuthenticationError('No user found');
         },
-
+        
         removeBook: async (parent, { bookId }, context) => {
             if (context.user) {
                 const user = User.findOneAndUpdate(
                     {
-                        where: {
-                            _id: context.user._id,
-                        },
+                        _id: context.user._id,
                     },
                     {
                         $pull: {
@@ -87,7 +86,8 @@ const resolvers = {
                     {
                         new: true,
                     }
-                );
+                    );
+                    console.log(user);
                 return user;
             }
             throw new AuthenticationError('No user found');
