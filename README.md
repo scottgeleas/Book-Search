@@ -1,46 +1,67 @@
 # Book Search
-This is an application that lets users search and save books via the Google Books API. This app utilizes GraphQL to only return the data required. Users can search for any book, and save it to look up later.
 
-![]()
+This is an application that lets users search and save books via the Google Books API. After logging in, users can search for any book and save it to look up later. This app utilizes GraphQL to only return the data required.
+
+![Searching fo a book](./client/public/images/search.png)
+![Viewing saved books](./client/public/images/saved.png)
+![Login](./client/public/images/login.png)
+
+### [Book Search Deployment](https://book-search-sjg.herokuapp.com/)
 
 ## Getting Started:
 
-### []()
-
 If you want to edit this app you must have a Github account, have downloaded Node.js, MongoDB, Robo 3T, and Visual Studio Code.
 
-- Create a Github account here: [Github](https://github.com/)
-- Download Visual Studio here: [Visual Studio](https://code.visualstudio.com/download/)
-- Download MongoDB here: [MongoDB](https://www.mongodb.com/)
-- Download Robo 3T here: [Robo 3T](https://robomongo.org/)
-- Download Node: [Node.js](https://nodejs.org/en/)
-- Repository link: [Book Search Repo](https://github.com/scottgeleas/Book-Search)
+-   Create a Github account here: [Github](https://github.com/)
+-   Download Visual Studio here: [Visual Studio](https://code.visualstudio.com/download/)
+-   Download MongoDB here: [MongoDB](https://www.mongodb.com/)
+-   Download Robo 3T here: [Robo 3T](https://robomongo.org/)
+-   Download Node: [Node.js](https://nodejs.org/en/)
+-   Repository link: [Book Search Repo](https://github.com/scottgeleas/Book-Search)
 
- ### Authors:
+To start editing this application, navigate to the root directory in your terminal then run:
 
- Scott Geleas
+```
+npm install
+```
 
- ### Built With:
+Create a .env file and add a local instance of MongoDB
 
-- GraphQL
-- React.js
-- Javascript
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- Robo 3T
-- Visual Studio Code
+```
+MONGODB_URI="mongodb://localhost/DatabaseName"
+```
 
- ### Acknowledgments:
+Then run:
 
-Favicon made by 
-[Smashicons](https://www.flaticon.com/authors/smashicons) 
-from 
+```
+npm run develop
+```
+
+### Authors:
+
+Scott Geleas
+
+### Built With:
+
+-   GraphQL
+-   React.js
+-   Javascript
+-   Node.js
+-   Express.js
+-   MongoDB
+-   Mongoose
+-   Robo 3T
+-   Visual Studio Code
+
+### Acknowledgments:
+
+Favicon made by
+[Smashicons](https://www.flaticon.com/authors/smashicons)
+from
 [Flaticon](https://www.flaticon.com/)
 
- ### License: 
- 
+### License:
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Copyright (c) [2021] [Scott Geleas]
@@ -62,4 +83,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
